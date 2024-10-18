@@ -18,6 +18,3 @@ app.route('/api/v1/blog', blogRouter)
 export default app
 
 
-// postgresql://neondb_owner:K0e9WDTftshI@ep-small-tree-a5k47uif.us-east-2.aws.neon.tech/neondb?sslmode=require
-
-// DATABASE_URL=""
