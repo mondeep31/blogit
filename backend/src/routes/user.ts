@@ -38,7 +38,12 @@ userRouter.post('/signup', async(c)=> {
     }, c.env.JWT_SECRET)
     return c.text(jwt)
   } catch(e) {
-    return c.status(403)
+    console.error("Error during signup", e)
+    c.status(403)
+    return c.json({
+      message: "Error creating user"
+    })
+    
   }
   })
   
@@ -74,6 +79,10 @@ userRouter.post('/signup', async(c)=> {
     }, c.env.JWT_SECRET)
     return c.text(jwt)
   } catch(e) {
-    return c.status(403)
+    console.error("incorrect credentials", e)
+    c.status(403)
+    return c.json({
+      message: "error while signin"
+    })
   }
   })
